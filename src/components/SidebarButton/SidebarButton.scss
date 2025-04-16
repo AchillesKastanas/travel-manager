@@ -1,0 +1,64 @@
+.sidebar-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  cursor: pointer;
+  color: #2d3b4e7a;
+  transition: background-color 0.3s linear;
+  -webkit-transition: background-color 0.3s linear;
+  border-radius: 8px;
+
+  &.active {
+    background-color: #50d8a5;
+    color: white;
+
+    path {
+      fill: white;
+      fill-opacity: 1;
+    }
+  }
+
+  &.logo {
+    margin-top: 0;
+
+    svg {
+      flex-shrink: 0;
+    }
+  }
+
+  &.collapse {
+    margin: auto;
+    margin-bottom: 0;
+
+    &.is-expanded {
+      border: 1px solid red;
+    }
+  }
+
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 48px;
+    width: 48px;
+  }
+
+  .label {
+    display: flex;
+    font-weight: 600;
+    font-size: 1rem;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    margin-left: 10px;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+
+    &.is-expanded {
+      opacity: 1;
+    }
+  }
+}

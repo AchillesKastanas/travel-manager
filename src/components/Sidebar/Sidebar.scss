@@ -1,0 +1,32 @@
+@import "@styles/variables.scss";
+
+.sidebar {
+  position: absolute;
+  width: 82px;
+  height: 100%;
+  background-color: var(--sidebar-bg);
+  box-shadow: var(--box-shadow);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  z-index: 2;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+  user-select: none;
+
+  // TEMP DEV
+  max-height: 942px;
+
+  &.is-expanded {
+    width: 260px;
+    align-items: flex-start;
+  }
+
+  .sidebar-actions-container {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+  }
+}
