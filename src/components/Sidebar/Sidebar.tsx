@@ -22,7 +22,7 @@ const navItems = [
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(1);
 
   const toggleSidebar = () => setIsExpanded((prev) => !prev);
 

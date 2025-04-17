@@ -19,6 +19,10 @@ body {
 
   .content {
     z-index: 0;
-    padding-left: 81px;
+    padding-left: 82px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
   }
 }
