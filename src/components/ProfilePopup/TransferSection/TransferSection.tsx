@@ -1,5 +1,6 @@
 import TransferRoute from "../TransferRoute/TransferRoute";
 import TransferDetails from "../TransferDetails/TransferDetails";
+import TransferSchedule from "../TransferSchedule/TransferSchedule";
 
 import styles from "./TransferSection.module.scss";
 
@@ -19,9 +20,10 @@ const TransfersSection = ({ date, route, details }: ITransfersSectionProps) => {
       <div className={styles.title}>Transfers</div>
       <div className={styles.data}>
         <div className={styles.date}>{date}</div>
+        <div className={styles.dateUnderline} />
         <TransferRoute from={route.from} to={route.to} times={route.times} />
         <TransferDetails items={details[0]} />
-        <TransferDetails items={details[1]} />
+        <TransferSchedule items={details[1]} />
       </div>
     </div>
   );

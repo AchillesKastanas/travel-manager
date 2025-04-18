@@ -1,5 +1,6 @@
 .wrapper {
   display: flex;
+  align-items: center;
   background: #f3f4f6;
   height: 2.3rem;
   width: 18rem;
@@ -10,13 +11,17 @@
   .item {
     display: flex;
     align-items: center;
-    margin: 0 0.6rem;
+    width: 100%;
+    height: 60%;
+    padding-left: 0.6rem;
+    color: #2d3b4e80;
 
     .itemName {
-      font-size: 0.7rem;
+      font-size: 0.8rem;
+      text-align: center;
+      margin-left: 0.5rem;
+      padding-right: 0.7rem;
       font-weight: 600;
-      color: #2d3b4e80;
-      margin-left: 0.6rem;
     }
   }
 }
