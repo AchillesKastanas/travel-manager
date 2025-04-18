@@ -1,10 +1,12 @@
 .data-row {
   height: 54px;
+  font-size: 0.9rem;
+  font-weight: 400;
 
   td {
-    padding: 0 1rem;
-    vertical-align: middle;
     background-color: #ffffff;
+    padding-left: 1rem;
+    box-shadow: 0px 1px 1px 0px #2d3b4e0f;
 
     &:first-child {
       border-top-left-radius: 6px;
@@ -14,6 +16,22 @@
     &:last-child {
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
+    }
+  }
+
+  .opportunities-row {
+    .opportunities-data-wrapper {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .traveler-row {
+    .traveler-data-wrapper {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.85rem;
     }
   }
 }
