@@ -2,6 +2,7 @@
 import { useResize } from "@/hooks/useResize";
 import Sidebar from "@components/Sidebar/Sidebar";
 import Topbar from "@components/Topbar/Topbar";
+import { ModalProvider } from "@/contexts/ModalContext/ModalContext";
 
 import "@styles/globals.scss";
 
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${isMobile ? "isMobile" : "isDesktop"}`}>
-        <Sidebar />
-        <Topbar />
-        {children}
+        <ModalProvider>
+          <Sidebar />
+          <Topbar />
+          {children}
+        </ModalProvider>
       </body>
     </html>
   );

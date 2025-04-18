@@ -1,0 +1,19 @@
+.wrapper {
+  display: flex;
+  gap: 10px;
+  background: #f3f4f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+
+  svg {
+    width: 14px;
+    height: 14px;
+  }
+}

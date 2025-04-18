@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 11px;
+}
+
+.text {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
