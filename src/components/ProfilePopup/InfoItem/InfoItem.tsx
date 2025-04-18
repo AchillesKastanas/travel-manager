@@ -1,18 +1,18 @@
-import "./InfoItem.scss";
+import styles from "./InfoItem.module.scss";
 
-interface InfoItemProps {
+interface IInfoItemProps {
   title: string;
   text: string;
   icon?: React.ReactNode;
 }
 
-const InfoItem = ({ title, text, icon }: InfoItemProps) => {
+const InfoItem = ({ title, text, icon }: IInfoItemProps) => {
   return (
-    <div className="wrapper">
-      <div className="title">{title}</div>
-      <div className="text">
-        {icon}
-        {text}
+    <div className={styles.wrapper}>
+      <div className={styles.title}>{title}</div>
+      <div className={styles.desc}>
+        {icon && <div className={styles.icon}>{icon}</div>}
+        <div className={styles.text}>{text}</div>
       </div>
     </div>
   );

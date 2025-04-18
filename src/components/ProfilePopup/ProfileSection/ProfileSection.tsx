@@ -1,17 +1,15 @@
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
 import InfoItem from "../InfoItem/InfoItem";
 import ProfileIcon from "@assets/icon-profile.svg";
-import TransferIcon from "@assets/icon-transfer.svg";
-import EarlyCheckinIcon from "@assets/icon-earlycheckin.svg";
 
-import "./ProfileSection.scss";
+import styles from "./ProfileSection.module.scss";
 
-interface ProfileSectionProps {
+interface IProfileSectionProps {
   name: string;
   phone: string;
   email: string;
   origin: string;
-  opportunities: string[];
+  opportunities: { text: string; icon: React.ComponentType }[]; // Updated to include icon
 }
 
 const ProfileSection = ({
@@ -20,37 +18,32 @@ const ProfileSection = ({
   email,
   origin,
   opportunities,
-}: ProfileSectionProps) => {
+}: IProfileSectionProps) => {
   return (
-    <div className="container">
-      <div className="image">
-        <IconWrapper>
+    <div className={styles.container}>
+      <div className={styles.image}>
+        <IconWrapper style={{ width: "100%", height: "100%" }}>
           <ProfileIcon />
         </IconWrapper>
       </div>
-      <div className="name">{name}</div>
-      <hr className="divider" />
+      <div className={styles.name}>{name}</div>
+      <hr className={styles.divider} />
       <InfoItem title="Phone number" text={phone} />
       <InfoItem title="Email" text={email} />
       <InfoItem title="Coming from" text={origin} />
-      <InfoItem
-        title="Opportunities"
-        text={opportunities[0]}
-        icon={
-          <IconWrapper>
-            <TransferIcon />
-          </IconWrapper>
-        }
-      />
-      <InfoItem
-        title="Opportunities"
-        text={opportunities[1]}
-        icon={
-          <IconWrapper>
-            <EarlyCheckinIcon />
-          </IconWrapper>
-        }
-      />
+      <div className={styles.opportunities}>
+        <div className={styles.opportunitiesTitle}>Opportunities</div>
+        <div className={styles.opportunitiesList}>
+          {opportunities.map((opportunity, index) => (
+            <div key={index} className={styles.opportunityRow}>
+              <IconWrapper style={{ width: "34px", height: "34px" }}>
+                <opportunity.icon />
+              </IconWrapper>
+              <div className={styles.opportunityText}>{opportunity.text}</div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,15 +1,15 @@
 import ProfileIcon from "@assets/icon-profile.svg";
-import "./TransferDetails.scss";
+import styles from "./TransferDetails.module.scss";
 
-interface TransferDetailsProps {
+interface ITransferDetailsProps {
   items: string[];
 }
 
-const TransferDetails = ({ items }: TransferDetailsProps) => {
+const TransferDetails = ({ items }: ITransferDetailsProps) => {
   return (
-    <div className="wrapper">
+    <div className={styles.wrapper}>
       {items.map((item, index) => (
-        <div key={index} className="item">
+        <div key={index} className={styles.item}>
           <ProfileIcon />
           <span>{item}</span>
         </div>
