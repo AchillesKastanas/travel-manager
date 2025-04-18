@@ -1,7 +1,7 @@
 "use client";
 import { useResize } from "@/hooks/useResize";
-import Sidebar from "@/components/Sidebar/Sidebar";
-import Topbar from "@/components/Topbar/Topbar";
+import Sidebar from "@components/Sidebar/Sidebar";
+import Topbar from "@components/Topbar/Topbar";
 
 import "@styles/globals.scss";
 

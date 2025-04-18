@@ -1,13 +1,21 @@
+import TransfersGroup from "@components/TransfersGroup/TransfersGroup";
+
 import "./TransfersTable.scss";
 
 const TransfersTable = () => {
+  const groupedData = [
+    { label: "Today", count: 4, key: "today" },
+    { label: "Tomorrow", count: 2, key: "tomorrow" },
+    { label: "Thursday, 3 June", count: 3, key: "june" },
+  ];
+
   return (
     <div className="transfers-table-wrapper">
       <table className="transfers-table">
         <thead>
           <tr>
-            <th style={{ width: "6%" }}>STATUS</th>
-            <th style={{ width: "18%" }}>TRAVELER</th>
+            <th style={{ width: "5%" }}>STATUS</th>
+            <th style={{ width: "18%" }}>TRAVELLER</th>
             <th style={{ width: "18%" }}>ARRIVAL / DEPARTURE</th>
             <th style={{ width: "18%" }}>FROM / TO</th>
             <th style={{ width: "16%" }}>OPPORTUNITIES</th>
@@ -15,44 +23,13 @@ const TransfersTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr className="date-label">
-            <td colSpan={6}>Today</td>
-          </tr>
-          {[...Array(4)].map((_, idx) => (
-            <tr className="data-row" key={`today-${idx}`}>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          ))}
-          <tr className="date-label">
-            <td colSpan={6}>Tomorrow</td>
-          </tr>
-          {[...Array(2)].map((_, idx) => (
-            <tr className="data-row" key={`tomorrow-${idx}`}>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          ))}
-          <tr className="date-label">
-            <td colSpan={6}>Thursday, 3 June</td>
-          </tr>
-          {[...Array(3)].map((_, idx) => (
-            <tr className="data-row" key={`june-${idx}`}>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+          {groupedData.map(({ label, count, key }) => (
+            <TransfersGroup
+              key={key}
+              label={label}
+              count={count}
+              groupKey={key}
+            />
           ))}
         </tbody>
         <tfoot>

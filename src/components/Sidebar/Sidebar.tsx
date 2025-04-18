@@ -8,7 +8,7 @@ import Revenue from "@assets/revenue.svg";
 import Settings from "@assets/settings.svg";
 import Collapse from "@assets/collapse.svg";
 
-import SidebarButton from "../SidebarButton/SidebarButton";
+import SidebarButton from "@components/SidebarButton/SidebarButton";
 
 import "./Sidebar.scss";
 

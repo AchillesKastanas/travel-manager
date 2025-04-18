@@ -1,5 +1,5 @@
-import PageTitle from "@/components/PageTitle/PageTitle";
-import TransfersTable from "@/components/TransfersTable/TransfersTable";
+import PageTitle from "@components/PageTitle/PageTitle";
+import TransfersTable from "@components/TransfersTable/TransfersTable";
 
 const Home = () => {
   return (
