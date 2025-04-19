@@ -2,6 +2,8 @@ import React from "react";
 
 import IconWrapper from "@components/IconWrapper/IconWrapper";
 import IconCancel from "@assets/icon-cancel.svg";
+import BackButton from "@assets/back.svg";
+import ForwardButton from "@assets/forward.svg";
 
 import "./Modal.scss";
 
@@ -16,6 +18,9 @@ const Modal = ({ isOpen, onClose, children }: ΙModalProps) => {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
+      <div className="back-button">
+        <BackButton />
+      </div>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <div className="modal-close" onClick={onClose}>
           <IconWrapper>
@@ -23,6 +28,9 @@ const Modal = ({ isOpen, onClose, children }: ΙModalProps) => {
           </IconWrapper>
         </div>
         {children}
+      </div>
+      <div className="next-button">
+        <ForwardButton />
       </div>
     </div>
   );

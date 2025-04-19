@@ -11,6 +11,32 @@
   z-index: 10;
 }
 
+.back-button {
+  border-radius: 50%;
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 20;
+  left: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-button {
+  border-radius: 50%;
+  background-color: #ffffff;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  z-index: 20;
+  right: 2.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-content {
   background: #ffffff;
   overflow: hidden;

@@ -18,7 +18,12 @@ const TransfersTable = () => {
             <th style={{ width: "18%" }}>TRAVELLER</th>
             <th style={{ width: "18%" }}>ARRIVAL / DEPARTURE</th>
             <th style={{ width: "18%" }}>FROM / TO</th>
-            <th style={{ width: "16%" }}>OPPORTUNITIES</th>
+            <th style={{ width: "16%" }}>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                OPPORTUNITIES
+                <div className="new-label">New</div>
+              </div>
+            </th>
             <th style={{ width: "22%" }}></th>
           </tr>
         </thead>
