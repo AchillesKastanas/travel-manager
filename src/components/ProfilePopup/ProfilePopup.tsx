@@ -11,7 +11,7 @@ interface IProfilePopupProps {
     dateTime: string;
     location: string;
     status: string;
-    opportunities: { text: string; icon: React.ComponentType }[];
+    opportunities: string[];
   };
 }
 
