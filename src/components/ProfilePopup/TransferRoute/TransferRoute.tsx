@@ -1,5 +1,6 @@
 import TransferGraph from "@assets/transfer-graph.svg";
-import styles from "./TransferRoute.module.scss";
+
+import "./TransferRoute.scss";
 
 interface TransferRouteProps {
   from: { name: string; address: string };
@@ -9,21 +10,21 @@ interface TransferRouteProps {
 
 const TransferRoute = ({ from, to, times }: TransferRouteProps) => {
   return (
-    <div className={styles.route}>
-      <TransferGraph className={styles.icon} />
-      <div className={styles.locations}>
-        <div className={styles.location}>
-          <div className={styles.name}>{from.name}</div>
-          <div className={styles.address}>{from.address}</div>
+    <div className="trasnfer-route-container">
+      <TransferGraph className="icon" />
+      <div className="locations">
+        <div className="location">
+          <div className="name">{from.name}</div>
+          <div className="address">{from.address}</div>
         </div>
-        <div className={styles.location}>
-          <div className={styles.name}>{to.name}</div>
-          <div className={styles.address}>{to.address}</div>
+        <div className="location">
+          <div className="name">{to.name}</div>
+          <div className="address">{to.address}</div>
         </div>
       </div>
-      <div className={styles.hours}>
-        <div className={styles.hour}>{times[0]}</div>
-        <div className={styles.hour}>{times[1]}</div>
+      <div className="hours">
+        <div className="hour">{times[0]}</div>
+        <div className="hour">{times[1]}</div>
       </div>
     </div>
   );

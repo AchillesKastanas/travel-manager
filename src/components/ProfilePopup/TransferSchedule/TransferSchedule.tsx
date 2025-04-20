@@ -1,7 +1,7 @@
 import TakeoffIcon from "@assets/icon-takeoff.svg";
 import TimeIcon from "@assets/icon-time.svg";
 
-import styles from "./TransferSchedule.module.scss";
+import "./TransferSchedule.scss";
 
 interface ITransferScheduleProps {
   items: string[];
@@ -9,30 +9,30 @@ interface ITransferScheduleProps {
 
 const TransferSchedule = ({ items }: ITransferScheduleProps) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.item} style={{ width: "38%" }}>
+    <div className="transfer-schedule-container">
+      <div className="item" style={{ width: "38%" }}>
         <TakeoffIcon />
         <span
-          className={styles.itemName}
+          className="item-name"
           style={{ borderRight: "1px solid #2d3b4e14" }}
         >
           {items[0]}
         </span>
       </div>
-      <div className={styles.item} style={{ width: "35%" }}>
+      <div className="item" style={{ width: "35%" }}>
         <TimeIcon />
         <span
-          className={styles.itemName}
+          className="item-name"
           style={{ borderRight: "1px solid #2d3b4e14" }}
         >
           {items[1]}
         </span>
       </div>
       <div
-        className={styles.item}
+        className="item"
         style={{ width: "26%", padding: 0, color: "#42C594" }}
       >
-        <span className={styles.itemName}>{items[2]}</span>
+        <span className="item-name">{items[2]}</span>
       </div>
     </div>
   );

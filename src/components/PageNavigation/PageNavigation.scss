@@ -1,0 +1,37 @@
+.page-navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  .button-back,
+  .button-forward,
+  .button-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .button-back,
+  .button-forward {
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .button-number {
+    background-color: #fff;
+    color: #333;
+  }
+
+  .number-container {
+    display: flex;
+    gap: 5px;
+  }
+}

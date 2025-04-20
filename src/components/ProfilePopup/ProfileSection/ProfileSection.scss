@@ -1,0 +1,64 @@
+.profile-section-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-right: 1px solid #2d3b4e14;
+
+  .image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 82px;
+    margin: 3.2rem auto 0 auto;
+  }
+
+  .name {
+    font-size: 1rem;
+    font-weight: 800;
+    width: 50%;
+    text-align: center;
+    color: #2d3b4e;
+    margin: 1rem auto 0 auto;
+  }
+
+  .divider {
+    border: 0;
+    margin: 1.8rem auto 0 auto;
+    width: 72%;
+    border-top: 1px solid #2d3b4e14;
+  }
+
+  .opportunities {
+    display: flex;
+    flex-direction: column;
+    margin: 1.8rem auto 0 auto;
+    width: 72%;
+    gap: 0.6rem;
+
+    .opportunities-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #2d3b4e80;
+    }
+
+    .opportunities-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+
+      .opportunity-row {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+
+        .opportunity-text {
+          font-size: 0.9rem;
+          font-weight: 400;
+          color: #2d3b4e;
+        }
+      }
+    }
+  }
+}

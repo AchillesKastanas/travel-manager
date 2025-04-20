@@ -1,4 +1,4 @@
-.container {
+.transfers-section-container {
   flex: 2.75;
   display: flex;
   flex-direction: column;
@@ -10,7 +10,7 @@
     color: #2d3b4e;
   }
 
-  .data {
+  .transfers-data {
     background-color: #2d3b4e08;
     border-radius: 6px;
     margin-top: 1rem;
@@ -22,7 +22,7 @@
       color: #2d3b4e;
     }
 
-    .dateUnderline {
+    .date-underline {
       margin-top: 0.4rem;
       border-bottom: 3px solid #48d9a4;
       border-radius: 1.5px;

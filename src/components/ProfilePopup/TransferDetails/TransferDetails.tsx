@@ -3,7 +3,7 @@ import HandLuggageIcon from "@assets/icon-handluggage.svg";
 import LuggageIcon from "@assets/icon-luggage.svg";
 import ChildSeatIcon from "@assets/icon-childseat.svg";
 
-import styles from "./TransferDetails.module.scss";
+import "./TransferDetails.scss";
 
 interface ITransferDetailsProps {
   items: string[];
@@ -11,22 +11,22 @@ interface ITransferDetailsProps {
 
 const TransferDetails = ({ items }: ITransferDetailsProps) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.item}>
+    <div className="trasnfer-details-container">
+      <div className="item">
         <PassengersIcon />
-        <span className={styles.itemName}>{items[0]}</span>
+        <span className="item-name">{items[0]}</span>
       </div>
-      <div className={styles.item}>
+      <div className="item">
         <ChildSeatIcon />
-        <span className={styles.itemName}>{items[1]}</span>
+        <span className="item-name">{items[1]}</span>
       </div>
-      <div className={styles.item}>
+      <div className="item">
         <LuggageIcon />
-        <span className={styles.itemName}>{items[2]}</span>
+        <span className="item-name">{items[2]}</span>
       </div>
-      <div className={styles.item}>
+      <div className="item">
         <HandLuggageIcon />
-        <span className={styles.itemName}>{items[3]}</span>
+        <span className="item-name">{items[3]}</span>
       </div>
     </div>
   );

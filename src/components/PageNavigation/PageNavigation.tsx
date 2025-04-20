@@ -1,19 +1,20 @@
 import BackButton from "@assets/back.svg";
 import ForwardButton from "@assets/forward.svg";
-import styles from "./PageNavigation.module.scss";
+
+import "./PageNavigation.scss";
 
 const PageNavigation = () => {
   return (
-    <div className={styles.container}>
-      <div className={styles.buttonBack}>
+    <div className="page-navigation-container">
+      <div className="button-back">
         <BackButton />
       </div>
-      <div className={styles.numberContainer}>
-        <div className={styles.buttonNumber}>1</div>
-        <div className={styles.buttonNumber}>2</div>
-        <div className={styles.buttonNumber}>3</div>
+      <div className="number-container">
+        <div className="button-number">1</div>
+        <div className="button-number">2</div>
+        <div className="button-number">3</div>
       </div>
-      <div className={styles.buttonForward}>
+      <div className="button-forward">
         <ForwardButton />
       </div>
     </div>

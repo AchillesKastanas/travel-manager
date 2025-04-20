@@ -3,7 +3,7 @@ import TransfersSection from "./TransferSection/TransferSection";
 import TransferIcon from "@assets/icon-transfer.svg";
 import EarlyCheckinIcon from "@assets/icon-earlycheckin.svg";
 
-import styles from "./ProfilePopup.module.scss";
+import "./ProfilePopup.scss";
 
 interface IProfilePopupProps {
   profileData: {
@@ -49,7 +49,7 @@ const POPUP_DATA = {
 
 const ProfilePopup = ({ profileData }: IProfilePopupProps) => {
   return (
-    <div className={styles.popup}>
+    <div className="profile-popup-container">
       <ProfileSection
         name={POPUP_DATA.profile.name}
         phone={POPUP_DATA.profile.phone}

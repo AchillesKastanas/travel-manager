@@ -1,4 +1,4 @@
-import styles from "./InfoItem.module.scss";
+import "./InfoItem.scss";
 
 interface IInfoItemProps {
   title: string;
@@ -8,11 +8,11 @@ interface IInfoItemProps {
 
 const InfoItem = ({ title, text, icon }: IInfoItemProps) => {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.title}>{title}</div>
-      <div className={styles.desc}>
-        {icon && <div className={styles.icon}>{icon}</div>}
-        <div className={styles.text}>{text}</div>
+    <div className="info-item-container">
+      <div className="title">{title}</div>
+      <div className="desc">
+        {icon && <div className="icon">{icon}</div>}
+        <div className="text">{text}</div>
       </div>
     </div>
   );
