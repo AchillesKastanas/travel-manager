@@ -1,8 +1,6 @@
 import PageTitle from "@components/PageTitle/PageTitle";
 import TransfersTable from "@components/TransfersTable/TransfersTable";
 
-import BackButton from "@assets/back.svg";
-import ForwardButton from "@assets/forward.svg";
 import PageNavigation from "@/components/PageNavigation/PageNavigation";
 
 const Home = () => {
