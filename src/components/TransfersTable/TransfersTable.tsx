@@ -37,11 +37,6 @@ const TransfersTable = () => {
             />
           ))}
         </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan={6}></td>
-          </tr>
-        </tfoot>
       </table>
     </div>
   );

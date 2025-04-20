@@ -1,4 +1,5 @@
 import React from "react";
+
 import "./SidebarButton.scss";
 
 interface ISidebarButtonProps {
@@ -17,7 +18,9 @@ const SidebarButton = ({
   onClick,
 }: ISidebarButtonProps) => (
   <div className={`sidebar-button ${className}`} onClick={onClick}>
-    <div className="icon-wrapper">{icon}</div>
+    <div className={`icon-wrapper ${isExpanded ? "is-expanded" : ""}`}>
+      {icon}
+    </div>
     {label && (
       <div className={`label ${isExpanded ? "is-expanded" : ""}`}>{label}</div>
     )}
