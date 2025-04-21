@@ -38,7 +38,7 @@ const Sidebar = () => {
       <div className="sidebar-actions-container">
         {navItems.map(({ icon, label }, idx) => (
           <SidebarButton
-            key={idx}
+            key={`${label}-${idx}`}
             icon={icon}
             label={label}
             isExpanded={isExpanded}

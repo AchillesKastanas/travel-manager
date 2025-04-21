@@ -18,9 +18,10 @@ import "./TransferRow.scss";
 
 interface ITransferRowProps {
   user: IUser;
+  formattedUserDate: string;
 }
 
-const TransferRow = ({ user }: ITransferRowProps) => {
+const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
   const { openModal } = useModal();
 
   const handleRowClick = () => {
@@ -63,7 +64,7 @@ const TransferRow = ({ user }: ITransferRowProps) => {
           <div className="traveler-profile-name">{`${user.traveler_first_name} ${user.traveler_last_name}`}</div>
         </div>
       </td>
-      <td>{user.datetime}</td>
+      <td>{formattedUserDate}</td>
       <td>{user.location_title}</td>
       <td className="opportunities-row">
         <div className="opportunities-data-wrapper">

@@ -1,6 +1,7 @@
 import { IUser } from "@/types";
 
 import TransferRow from "@components/TransferRow/TransferRow";
+import { formatUserDate } from "./utils/formatUserDate";
 
 import "./TransfersGroup.scss";
 
@@ -15,8 +16,12 @@ const TransfersGroup = ({ label, users }: ITransfersGroupProps) => {
       <tr className="date-label">
         <td colSpan={6}>{label}</td>
       </tr>
-      {users.map((user, idx) => (
-        <TransferRow user={user} key={`${user.id}`} />
+      {users.map((user) => (
+        <TransferRow
+          user={user}
+          formattedUserDate={formatUserDate(label, user.datetime)}
+          key={`${user.id}`}
+        />
       ))}
     </>
   );
