@@ -26,7 +26,7 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
 
   const handleRowClick = () => {
     const profileData = {
-      travelerName: "Sergey Shandarin",
+      travelerName: `${user.traveler_first_name} ${user.traveler_last_name}`,
       dateTime: "Today, 1 June, 13:00",
       location: "Athens Airport",
       status: "Arriving",
@@ -57,9 +57,11 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
       <td className="traveler-row">
         <div className="traveler-data-wrapper">
           <IconWrapper>
-            <img src={user.traveler_photo} />
-            {}
-            {/* <IconProfile /> */}
+            {user.traveler_photo ? (
+              <img src={user.traveler_photo} />
+            ) : (
+              <IconProfile />
+            )}
           </IconWrapper>
           <div className="traveler-profile-name">{`${user.traveler_first_name} ${user.traveler_last_name}`}</div>
         </div>
@@ -83,11 +85,19 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
               <IconEarlyCheckIn />
             </IconWrapper>
           )}
-          {!user.babies && !user.return_transfer && !user.early_checkin && (
+          {user.late_checkout && (
             <IconWrapper>
-              <IconEmpty />
+              <IconLateCheckOut />
             </IconWrapper>
           )}
+          {!user.babies &&
+            !user.return_transfer &&
+            !user.early_checkin &&
+            !user.late_checkout && (
+              <IconWrapper>
+                <IconEmpty />
+              </IconWrapper>
+            )}
         </div>
       </td>
       <td></td>
