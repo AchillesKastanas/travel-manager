@@ -6,4 +6,9 @@
   height: 38px;
   background-color: #f4f5f6;
   border-radius: 50%;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+  }
 }

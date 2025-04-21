@@ -3,7 +3,7 @@ import "./IconWrapper.scss";
 
 interface IIconWrapperProps {
   children: ReactNode;
-  style?: CSSProperties; // Add style prop to accept custom styles
+  style?: CSSProperties;
 }
 
 const IconWrapper = ({ children, style }: IIconWrapperProps) => {

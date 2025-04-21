@@ -1,3 +1,4 @@
+"use client";
 import PageTitle from "@components/PageTitle/PageTitle";
 import TransfersTable from "@components/TransfersTable/TransfersTable";
 

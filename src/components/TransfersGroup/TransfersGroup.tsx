@@ -1,20 +1,22 @@
-import "./TransfersGroup.scss";
+import { IUser } from "@/types";
+
 import TransferRow from "@components/TransferRow/TransferRow";
 
-type Props = {
+import "./TransfersGroup.scss";
+
+type ITransfersGroupProps = {
   label: string;
-  count: number;
-  groupKey: string;
+  users: IUser[];
 };
 
-const TransfersGroup = ({ label, count, groupKey }: Props) => {
+const TransfersGroup = ({ label, users }: ITransfersGroupProps) => {
   return (
     <>
       <tr className="date-label">
         <td colSpan={6}>{label}</td>
       </tr>
-      {[...Array(count)].map((_, idx) => (
-        <TransferRow key={`${groupKey}-${idx}`} />
+      {users.map((user, idx) => (
+        <TransferRow user={user} key={`${user.id}`} />
       ))}
     </>
   );
