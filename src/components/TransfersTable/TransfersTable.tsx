@@ -15,18 +15,6 @@ const TransfersTable = () => {
   const groupedUsers = users ? groupUsersByDay(users) : {};
   const groupedUserEntries = groupedUsers ? Object.entries(groupedUsers) : [];
 
-  // const {
-  //   data: travels,
-  //   loading: travelsLoading,
-  //   error: travelsError,
-  // } = useFetchData<ITravel[]>("/data/transfers_details.json");
-
-  // console.log("Travels:", {
-  //   data: travels,
-  //   loading: travelsLoading,
-  //   error: travelsError?.message || null,
-  // });
-
   return (
     <div className="transfers-table-wrapper">
       <table className="transfers-table">

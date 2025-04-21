@@ -1,9 +1,8 @@
-"use client";
 import { useModal } from "@/contexts/ModalContext/ModalContext";
 import { IUser } from "@/types";
 import ProfilePopup from "../ProfilePopup/ProfilePopup";
-
 import IconWrapper from "../IconWrapper/IconWrapper";
+
 import Arriving from "@assets/Arriving.svg";
 import Departing from "@assets/Departing.svg";
 import Transfer from "@assets/Transfer.svg";
@@ -25,15 +24,7 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
   const { openModal } = useModal();
 
   const handleRowClick = () => {
-    const profileData = {
-      travelerName: `${user.traveler_first_name} ${user.traveler_last_name}`,
-      dateTime: "Today, 1 June, 13:00",
-      location: "Athens Airport",
-      status: "Arriving",
-      opportunities: ["Baby", "Transfer", "Early Check-In"],
-    };
-
-    openModal(<ProfilePopup profileData={profileData} />);
+    openModal(<ProfilePopup user={user} />);
   };
 
   const loadStatusIcon = (category: string) => {
