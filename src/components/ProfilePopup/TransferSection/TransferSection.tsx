@@ -11,10 +11,18 @@ interface ITransfersSectionProps {
     to: { name: string; address: string };
     times: string[];
   };
-  details: string[][];
+  transferDetails: string[];
+  flightDetails?: string[];
 }
 
-const TransfersSection = ({ date, route, details }: ITransfersSectionProps) => {
+const TransfersSection = ({
+  date,
+  route,
+  transferDetails,
+  flightDetails = [],
+}: ITransfersSectionProps) => {
+  const shouldShowFlightDetails = flightDetails?.length > 0;
+
   return (
     <div className="transfers-section-container">
       <div className="title">Transfers</div>
@@ -22,8 +30,8 @@ const TransfersSection = ({ date, route, details }: ITransfersSectionProps) => {
         <div className="date">{date}</div>
         <div className="date-underline" />
         <TransferRoute from={route.from} to={route.to} times={route.times} />
-        <TransferDetails items={details[0]} />
-        <TransferSchedule items={details[1]} />
+        <TransferDetails items={transferDetails} />
+        {shouldShowFlightDetails && <TransferSchedule items={flightDetails} />}
       </div>
     </div>
   );

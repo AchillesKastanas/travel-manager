@@ -1,19 +1,40 @@
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
 import InfoItem from "../InfoItem/InfoItem";
 import ProfileIcon from "@assets/icon-profile.svg";
+import TransferIcon from "@assets/icon-transfer.svg";
+import EarlyCheckinIcon from "@assets/icon-earlycheckin.svg";
+import LateCheckoutIcon from "@assets/icon-latecheckout.svg";
+import BabyIcon from "@assets/icon-baby.svg";
 
 import "./ProfileSection.scss";
 
 interface IProfileSectionProps {
   name: string;
+  travelerPhoto: string;
   phone: string;
   email: string;
   origin: string;
-  opportunities: { text: string; icon: React.ComponentType }[];
+  opportunities: string[];
 }
+
+const getOpportunityIcon = (text: string): React.ReactNode => {
+  switch (text) {
+    case "Early check-in":
+      return <EarlyCheckinIcon />;
+    case "Late check-out":
+      return <LateCheckoutIcon />;
+    case "No return transfer":
+      return <TransferIcon />;
+    case "Baby":
+      return <BabyIcon />;
+    default:
+      return null;
+  }
+};
 
 const ProfileSection = ({
   name,
+  travelerPhoto,
   phone,
   email,
   origin,
@@ -23,7 +44,7 @@ const ProfileSection = ({
     <div className="profile-section-container">
       <div className="image">
         <IconWrapper style={{ width: "100%", height: "100%" }}>
-          <ProfileIcon />
+          {travelerPhoto ? <img src={travelerPhoto} /> : <ProfileIcon />}
         </IconWrapper>
       </div>
       <div className="name">{name}</div>
@@ -37,9 +58,9 @@ const ProfileSection = ({
           {opportunities.map((opportunity, index) => (
             <div key={index} className="opportunity-row">
               <IconWrapper style={{ width: "34px", height: "34px" }}>
-                <opportunity.icon />
+                {getOpportunityIcon(opportunity)}
               </IconWrapper>
-              <div className="opportunity-text">{opportunity.text}</div>
+              <div className="opportunity-text">{opportunity}</div>
             </div>
           ))}
         </div>
