@@ -48,10 +48,24 @@
     width: 48px;
   }
 
+  &.submenu-item {
+    &.active {
+      background-color: #50d8a526;
+      color: #42c594;
+    }
+
+    .label {
+      width: 100%;
+      font-weight: 400;
+      margin: 0;
+    }
+  }
+
   .label {
     display: flex;
     font-weight: 600;
     font-size: 1rem;
+    height: 48px;
     align-items: center;
     justify-content: center;
     opacity: 0;

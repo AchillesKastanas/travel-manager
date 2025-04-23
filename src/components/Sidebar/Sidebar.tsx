@@ -13,18 +13,44 @@ import SidebarButton from "@components/SidebarButton/SidebarButton";
 import "./Sidebar.scss";
 
 const navItems = [
-  { icon: <LiveView />, label: "Live view" },
-  { icon: <Scheduled />, label: "Scheduled" },
-  { icon: <Statistics />, label: "Statistics" },
-  { icon: <Revenue />, label: "Revenue" },
-  { icon: <Settings />, label: "Settings" },
+  { id: "live-view", icon: <LiveView />, label: "Live view" },
+  {
+    id: "scheduled",
+    icon: <Scheduled />,
+    label: "Scheduled",
+    subItems: [
+      { id: "opportunities", label: "Opportunities" },
+      { id: "early-check-in", label: "Early check in" },
+      { id: "other-sub-item", label: "Other sub item" },
+    ],
+  },
+  { id: "statistics", icon: <Statistics />, label: "Statistics" },
+  { id: "revenue", icon: <Revenue />, label: "Revenue" },
+  { id: "settings", icon: <Settings />, label: "Settings" },
 ];
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [activeIndex, setActiveIndex] = useState<number | null>(1);
+  const [activeId, setActiveId] = useState<string | null>("scheduled");
+  const [openSubmenuId, setOpenSubmenuId] = useState<string | null>(null);
 
   const toggleSidebar = () => setIsExpanded((prev) => !prev);
+
+  const handleMainItemClick = (id: string, hasSubItems: boolean) => {
+    setActiveId(id);
+    if (hasSubItems) {
+      setOpenSubmenuId(openSubmenuId === id ? null : id);
+    } else {
+      setOpenSubmenuId(null);
+    }
+  };
+
+  const handleSubItemClick = (subItemId: string) => {
+    setActiveId(subItemId);
+  };
+
+  const isItemActive = (itemId: string, subItemIds: string[] = []) =>
+    activeId === itemId || subItemIds.includes(activeId || "");
 
   return (
     <div className={`sidebar ${isExpanded ? "is-expanded" : ""}`}>
@@ -36,16 +62,39 @@ const Sidebar = () => {
       />
 
       <div className="sidebar-actions-container">
-        {navItems.map(({ icon, label }, idx) => (
-          <SidebarButton
-            key={`${label}-${idx}`}
-            icon={icon}
-            label={label}
-            isExpanded={isExpanded}
-            className={`action ${activeIndex === idx ? "active" : ""}`}
-            onClick={() => setActiveIndex(idx)}
-          />
-        ))}
+        {navItems.map(({ id, icon, label, subItems }) => {
+          const subItemIds = subItems ? subItems.map((sub) => sub.id) : [];
+          return (
+            <div key={id}>
+              <SidebarButton
+                icon={icon}
+                label={label}
+                isExpanded={isExpanded}
+                className={`action ${
+                  isItemActive(id, subItemIds) ? "active" : ""
+                }`}
+                onClick={() => handleMainItemClick(id, !!subItems)}
+                showArrow={!!subItems}
+                isSubmenuOpen={openSubmenuId === id}
+              />
+              {subItems && isExpanded && openSubmenuId === id && (
+                <div className="submenu">
+                  {subItems.map((subItem) => (
+                    <SidebarButton
+                      key={subItem.id}
+                      label={subItem.label}
+                      isExpanded={isExpanded}
+                      className={`submenu-item ${
+                        activeId === subItem.id ? "active" : ""
+                      }`}
+                      onClick={() => handleSubItemClick(subItem.id)}
+                    />
+                  ))}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
 
       <SidebarButton

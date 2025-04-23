@@ -3,11 +3,13 @@ import React from "react";
 import "./SidebarButton.scss";
 
 interface ISidebarButtonProps {
-  icon: React.ReactNode;
+  icon?: React.ReactNode;
   label?: string | React.ReactNode;
   isExpanded: boolean;
   className?: string;
   onClick?: () => void;
+  showArrow?: boolean;
+  isSubmenuOpen?: boolean;
 }
 
 const SidebarButton = ({
@@ -16,13 +18,22 @@ const SidebarButton = ({
   isExpanded,
   className = "",
   onClick,
+  showArrow = false,
+  isSubmenuOpen = false,
 }: ISidebarButtonProps) => (
   <div className={`sidebar-button ${className}`} onClick={onClick}>
-    <div className={`icon-wrapper ${isExpanded ? "is-expanded" : ""}`}>
-      {icon}
-    </div>
+    {icon && (
+      <div className={`icon-wrapper ${isExpanded ? "is-expanded" : ""}`}>
+        {icon}
+      </div>
+    )}
     {label && (
-      <div className={`label ${isExpanded ? "is-expanded" : ""}`}>{label}</div>
+      <div className={`label ${isExpanded ? "is-expanded" : ""}`}>
+        {label}
+        {showArrow && isExpanded && (
+          <span className={`arrow ${isSubmenuOpen ? "open" : ""}`}>▼</span>
+        )}
+      </div>
     )}
   </div>
 );
