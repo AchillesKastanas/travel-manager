@@ -16,11 +16,21 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${isMobile ? "isMobile" : "isDesktop"}`}>
-        <ModalProvider>
-          <Sidebar />
-          <Topbar />
-          {children}
-        </ModalProvider>
+        {isMobile ? (
+          // Mobile variant
+          <ModalProvider>
+            <Sidebar />
+            <Topbar />
+            {children}
+          </ModalProvider>
+        ) : (
+          // Desktop variant
+          <ModalProvider>
+            <Sidebar />
+            <Topbar />
+            {children}
+          </ModalProvider>
+        )}
       </body>
     </html>
   );

@@ -7,11 +7,13 @@ interface IModalContext {
   closeModal: () => void;
 }
 
+interface IModalProviderProps {
+  children: ReactNode;
+}
+
 const ModalContext = createContext<IModalContext | undefined>(undefined);
 
-export const ModalProvider: React.FC<{ children: ReactNode }> = ({
-  children,
-}) => {
+export const ModalProvider = ({ children }: IModalProviderProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [content, setContent] = useState<ReactNode>(null);
 

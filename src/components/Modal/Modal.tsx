@@ -1,11 +1,10 @@
 import React from "react";
 
-import IconWrapper from "@components/IconWrapper/IconWrapper";
-import IconCancel from "@assets/icon-cancel.svg";
-import BackButton from "@assets/back.svg";
-import ForwardButton from "@assets/forward.svg";
+import { useResize } from "@/hooks/useResize";
 
 import "./Modal.scss";
+import DesktopModal from "./DesktopModal/DesktopModal";
+import MobileModal from "./MobileModal/MobileModal";
 
 interface ΙModalProps {
   isOpen: boolean;
@@ -14,24 +13,17 @@ interface ΙModalProps {
 }
 
 const Modal = ({ isOpen, onClose, children }: ΙModalProps) => {
+  const { isMobile } = useResize();
+
   if (!isOpen) return null;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="back-button">
-        <BackButton />
-      </div>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <div className="modal-close" onClick={onClose}>
-          <IconWrapper>
-            <IconCancel />
-          </IconWrapper>
-        </div>
-        {children}
-      </div>
-      <div className="next-button">
-        <ForwardButton />
-      </div>
+      {isMobile ? (
+        <MobileModal onClose={onClose}>{children}</MobileModal>
+      ) : (
+        <DesktopModal onClose={onClose}>{children}</DesktopModal>
+      )}
     </div>
   );
 };
