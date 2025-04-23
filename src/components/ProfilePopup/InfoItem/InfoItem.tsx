@@ -1,7 +1,7 @@
 import "./InfoItem.scss";
 
 interface IInfoItemProps {
-  title: string;
+  title?: string;
   text: string;
   icon?: React.ReactNode;
 }
@@ -9,7 +9,7 @@ interface IInfoItemProps {
 const InfoItem = ({ title, text, icon }: IInfoItemProps) => {
   return (
     <div className="info-item-container">
-      <div className="title">{title}</div>
+      {title && <div className="title">{title}</div>}
       <div className="desc">
         {icon && <div className="icon">{icon}</div>}
         <div className="text">{text}</div>
