@@ -1,11 +1,10 @@
-import ProfileSection from "./ProfileSection/ProfileSection";
-import TransfersSection from "./TransferSection/TransferSection";
+import { useResize } from "@/hooks/useResize";
 import useFetchData from "@/hooks/useFetchData";
 import { ITravel, IUser } from "@/types";
 
-import { getUserOpportunitiesArray } from "./utils/getUserOpportunitiesArray";
 import { getTravelByUserId } from "./utils/getTravelByUserId";
-import { mapTravelToTransferProps } from "./utils/mapTravelToTransferProps";
+import ProfilePopupDesktop from "./ProfilePopupDesktop/ProfilePopupDesktop";
+import ProfilePopupMobile from "./ProfilePopupMobile/ProfilePopupMobile";
 
 import "./ProfilePopup.scss";
 
@@ -14,6 +13,7 @@ interface IProfilePopupProps {
 }
 
 const ProfilePopup = ({ user }: IProfilePopupProps) => {
+  const { isMobile } = useResize();
   const {
     data: travels,
     loading: travelsLoading,
@@ -26,19 +26,12 @@ const ProfilePopup = ({ user }: IProfilePopupProps) => {
 
   return (
     <div className="profile-popup-container">
-      {travel && (
-        <>
-          <ProfileSection
-            name={`${user.traveler_first_name} ${user.traveler_last_name}`}
-            travelerPhoto={`${user.traveler_photo}`}
-            phone={travel.traveler.phone_number}
-            email={travel.traveler.email}
-            origin={travel.traveler.country}
-            opportunities={getUserOpportunitiesArray(user)}
-          />
-          <TransfersSection {...mapTravelToTransferProps(user, travel)} />
-        </>
-      )}
+      {travel &&
+        (isMobile ? (
+          <ProfilePopupMobile user={user} travel={travel} />
+        ) : (
+          <ProfilePopupDesktop user={user} travel={travel} />
+        ))}
     </div>
   );
 };

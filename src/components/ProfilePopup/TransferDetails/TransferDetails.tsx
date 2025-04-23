@@ -2,14 +2,18 @@ import PassengersIcon from "@assets/icon-passengers.svg";
 import HandLuggageIcon from "@assets/icon-handluggage.svg";
 import LuggageIcon from "@assets/icon-luggage.svg";
 import ChildSeatIcon from "@assets/icon-childseat.svg";
+import ArrowDown from "@assets/down.svg";
 
 import "./TransferDetails.scss";
+import { useResize } from "@/hooks/useResize";
 
 interface ITransferDetailsProps {
   items: string[];
 }
 
 const TransferDetails = ({ items }: ITransferDetailsProps) => {
+  const { isMobile } = useResize();
+
   return (
     <div className="trasnfer-details-container">
       <div className="item">
@@ -28,6 +32,14 @@ const TransferDetails = ({ items }: ITransferDetailsProps) => {
         <HandLuggageIcon />
         <span className="item-name">{items[3]}</span>
       </div>
+      {isMobile && (
+        <div
+          className="item"
+          style={{ width: "1.3rem", margin: "auto 1.7rem auto auto" }}
+        >
+          <ArrowDown />
+        </div>
+      )}
     </div>
   );
 };

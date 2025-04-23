@@ -1,22 +1,49 @@
 .trasnfer-details-container {
   display: flex;
-  background: #f3f4f6;
+  background-color: #f3f4f6;
   height: 2.3rem;
   width: 18rem;
   border-radius: 18px;
   margin-top: 0.7rem;
   padding: 0 0.7rem;
 
+  .isMobile & {
+    width: 100%;
+    border: 1px solid #2d3b4e14;
+    border-radius: 50px;
+    background-color: unset;
+    height: 5rem;
+    padding: 0 1rem;
+  }
+
   .item {
     display: flex;
     align-items: center;
     margin: 0 0.6rem;
+
+    svg {
+      width: 1.4rem;
+    }
+
+    .isMobile & {
+      width: 5rem;
+
+      svg {
+        width: 2.2rem;
+        height: 2.2rem;
+      }
+    }
 
     .item-name {
       font-size: 0.7rem;
       font-weight: 600;
       color: #2d3b4e80;
       margin-left: 0.6rem;
+
+      .isMobile & {
+        margin-left: 1rem;
+        font-size: 1.3rem;
+      }
     }
   }
 }

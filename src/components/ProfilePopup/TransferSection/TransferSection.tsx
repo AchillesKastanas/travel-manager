@@ -3,6 +3,7 @@ import TransferDetails from "../TransferDetails/TransferDetails";
 import TransferSchedule from "../TransferSchedule/TransferSchedule";
 
 import "./TransferSection.scss";
+import { useResize } from "@/hooks/useResize";
 
 interface ITransfersSectionProps {
   date: string;
@@ -21,11 +22,13 @@ const TransfersSection = ({
   transferDetails,
   flightDetails = [],
 }: ITransfersSectionProps) => {
+  const { isMobile } = useResize();
+
   const shouldShowFlightDetails = flightDetails?.length > 0;
 
   return (
     <div className="transfers-section-container">
-      <div className="title">Transfers</div>
+      {!isMobile && <div className="title">Transfers</div>}
       <div className="transfers-data">
         <div className="date">{date}</div>
         <div className="date-underline" />

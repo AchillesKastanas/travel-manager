@@ -4,6 +4,10 @@
   flex-direction: column;
   padding: 2.8rem 2.2rem;
 
+  .isMobile & {
+    padding: 2rem 2.2rem;
+  }
+
   .title {
     font-size: 1.35rem;
     font-weight: 600;
@@ -16,17 +20,30 @@
     margin-top: 1rem;
     padding: 2rem;
 
+    .isMobile & {
+      background-color: unset;
+      padding: 0;
+    }
+
     .date {
       font-size: 1.2rem;
       font-weight: 600;
       color: #2d3b4e;
+
+      .isMobile & {
+        font-size: 2.2rem;
+      }
     }
 
     .date-underline {
       margin-top: 0.4rem;
       border-bottom: 3px solid #48d9a4;
       border-radius: 1.5px;
-      width: 4.12rem;
+      width: 7.5rem;
+
+      .isMobile & {
+        margin-top: 1rem;
+      }
     }
   }
 }

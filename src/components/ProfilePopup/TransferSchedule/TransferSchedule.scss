@@ -8,6 +8,14 @@
   margin-top: 0.7rem;
   padding: 0 0.7rem;
 
+  .isMobile & {
+    width: 100%;
+    border: 1px solid #2d3b4e14;
+    border-radius: 50px;
+    background-color: unset;
+    height: 5rem;
+  }
+
   .item {
     display: flex;
     align-items: center;
