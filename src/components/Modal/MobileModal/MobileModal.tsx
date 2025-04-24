@@ -14,7 +14,7 @@ const MobileModal = ({ onClose, children }: IMobileModalProps) => {
   return (
     <div className="mobile-modal-content" onClick={(e) => e.stopPropagation()}>
       <div className="modal-close" onClick={onClose}>
-        <IconWrapper style={{ width: "3.8rem", height: "3.8rem" }}>
+        <IconWrapper style={{ width: "2.2rem", height: "2.2rem" }}>
           <IconCancel />
         </IconWrapper>
       </div>

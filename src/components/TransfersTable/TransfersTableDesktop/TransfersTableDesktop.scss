@@ -1,0 +1,50 @@
+.transfers-table-wrapper {
+  flex: 15;
+  height: 100%;
+  padding: 0.4rem 1.6rem;
+}
+
+.transfers-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.6rem;
+
+  thead tr th {
+    padding-left: 1rem;
+    font-weight: 600;
+    font-size: 0.7rem;
+    color: #2d3b4e80;
+    text-align: left;
+    height: 34px;
+    background-color: #2d3b4e0a;
+
+    .new-label {
+      background-color: #ffc149;
+      border-radius: 2px;
+      box-shadow: 0px 1px 3px 0px #ffc149;
+      color: white;
+      font-weight: 700;
+      font-size: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 20px;
+      margin-left: 1rem;
+    }
+
+    &:first-child {
+      border-top-left-radius: 6px;
+      border-bottom-left-radius: 6px;
+    }
+
+    &:last-child {
+      border-top-right-radius: 6px;
+      border-bottom-right-radius: 6px;
+    }
+  }
+
+  tfoot tr td {
+    height: 40px;
+  }
+}

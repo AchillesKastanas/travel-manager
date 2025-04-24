@@ -1,4 +1,4 @@
-.trasnfer-details-container {
+.transfer-details-container {
   display: flex;
   background-color: #f3f4f6;
   height: 2.3rem;
@@ -8,11 +8,12 @@
   padding: 0 0.7rem;
 
   .isMobile & {
+    margin-top: 2rem;
     width: 100%;
     border: 1px solid #2d3b4e14;
     border-radius: 50px;
     background-color: unset;
-    height: 5rem;
+    height: 3rem;
     padding: 0 1rem;
   }
 
@@ -26,11 +27,12 @@
     }
 
     .isMobile & {
-      width: 5rem;
+      width: 3rem;
+      margin: 0 0.2rem;
 
       svg {
-        width: 2.2rem;
-        height: 2.2rem;
+        width: 1.25rem;
+        height: 1.25rem;
       }
     }
 
@@ -39,11 +41,6 @@
       font-weight: 600;
       color: #2d3b4e80;
       margin-left: 0.6rem;
-
-      .isMobile & {
-        margin-left: 1rem;
-        font-size: 1.3rem;
-      }
     }
   }
 }

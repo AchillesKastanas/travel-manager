@@ -64,7 +64,7 @@ const ProfileSectionMobile = ({
         <div className="opportunities-list">
           {opportunities.map((opportunity, index) => (
             <div key={index} className="opportunity-row">
-              <IconWrapper style={{ width: "4rem", height: "4rem" }}>
+              <IconWrapper style={{ width: "2.2rem", height: "2.2rem" }}>
                 {getOpportunityIcon(opportunity)}
               </IconWrapper>
               <div className="opportunity-text">{opportunity}</div>
@@ -75,7 +75,7 @@ const ProfileSectionMobile = ({
       <div className="profile-buttons-row">
         <div className="profile-button">
           <IconWrapper
-            style={{ width: "2rem", height: "2rem", borderRadius: 0 }}
+            style={{ width: "1rem", height: "1rem", borderRadius: 0 }}
           >
             <CallIcon />
           </IconWrapper>
@@ -83,7 +83,7 @@ const ProfileSectionMobile = ({
         </div>
         <div className="profile-button">
           <IconWrapper
-            style={{ width: "2rem", height: "2rem", borderRadius: 0 }}
+            style={{ width: "1rem", height: "1rem", borderRadius: 0 }}
           >
             <ChatIcon />
           </IconWrapper>

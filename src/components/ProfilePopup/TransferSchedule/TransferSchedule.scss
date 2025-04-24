@@ -9,11 +9,12 @@
   padding: 0 0.7rem;
 
   .isMobile & {
+    margin-top: 0.9rem;
     width: 100%;
     border: 1px solid #2d3b4e14;
     border-radius: 50px;
     background-color: unset;
-    height: 5rem;
+    height: 3rem;
     padding: 0 1rem;
   }
 
@@ -29,26 +30,12 @@
       width: 1.4rem;
     }
 
-    .isMobile & {
-      width: 5rem;
-
-      svg {
-        width: 2.2rem;
-        height: 2.2rem;
-      }
-    }
-
     .item-name {
       font-size: 0.8rem;
       text-align: center;
       margin-left: 0.5rem;
       padding-right: 0.7rem;
       font-weight: 600;
-
-      .isMobile & {
-        margin-left: 1rem;
-        font-size: 1.3rem;
-      }
     }
   }
 }

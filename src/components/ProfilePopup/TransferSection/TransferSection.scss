@@ -5,9 +5,8 @@
   padding: 2.8rem 2.2rem;
 
   .isMobile & {
-    padding: 2rem 2.2rem;
+    padding: 1rem;
     flex: unset;
-    height: 36rem;
   }
 
   .title {
@@ -24,6 +23,7 @@
 
     .isMobile & {
       background-color: unset;
+      margin-top: 0.5rem;
       padding: 0;
     }
 
@@ -33,7 +33,7 @@
       color: #2d3b4e;
 
       .isMobile & {
-        font-size: 2.2rem;
+        font-size: 1.3rem;
       }
     }
 
@@ -44,7 +44,8 @@
       width: 7.5rem;
 
       .isMobile & {
-        margin-top: 1rem;
+        width: 4rem;
+        border-bottom: 2px solid #48d9a4;
       }
     }
   }

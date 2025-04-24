@@ -15,7 +15,7 @@ const TransferDetails = ({ items }: ITransferDetailsProps) => {
   const { isMobile } = useResize();
 
   return (
-    <div className="trasnfer-details-container">
+    <div className="transfer-details-container">
       <div className="item">
         <PassengersIcon />
         <span className="item-name">{items[0]}</span>
@@ -35,7 +35,11 @@ const TransferDetails = ({ items }: ITransferDetailsProps) => {
       {isMobile && (
         <div
           className="item"
-          style={{ width: "1.3rem", margin: "auto 1.7rem auto auto" }}
+          style={{
+            width: "0.7rem",
+            height: "0.7rem",
+            margin: "auto 0.7rem auto auto",
+          }}
         >
           <ArrowDown />
         </div>

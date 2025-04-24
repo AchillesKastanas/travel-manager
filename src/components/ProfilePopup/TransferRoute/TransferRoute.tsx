@@ -10,7 +10,7 @@ interface TransferRouteProps {
 
 const TransferRoute = ({ from, to, times }: TransferRouteProps) => {
   return (
-    <div className="trasnfer-route-container">
+    <div className="transfer-route-container">
       <TransferGraph className="icon" />
       <div className="locations">
         <div className="location">
