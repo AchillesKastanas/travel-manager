@@ -2,8 +2,6 @@ import { useResize } from "@/hooks/useResize";
 import ProfileSectionDesktop from "./ProfileSectionDesktop/ProfileSectionDesktop";
 import ProfileSectionMobile from "./ProfileSectionMobile/ProfileSectionMobile";
 
-import "./ProfileSection.scss";
-
 interface IProfileSectionProps {
   name: string;
   travelerPhoto: string;

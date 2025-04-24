@@ -6,7 +6,7 @@ import LateCheckoutIcon from "@assets/icon-latecheckout.svg";
 import BabyIcon from "@assets/icon-baby.svg";
 import InfoItem from "../../InfoItem/InfoItem";
 
-import "../ProfileSection.scss";
+import "./ProfileSectionDesktop.scss";
 
 interface IProfileSectionDesktopProps {
   name: string;

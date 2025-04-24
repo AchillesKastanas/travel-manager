@@ -5,21 +5,6 @@
   height: 100%;
   border-right: 1px solid #2d3b4e14;
 
-  .profile-main-section-container {
-    display: flex;
-    flex-direction: row;
-
-    .main-info {
-      display: flex;
-      border-bottom: 1px solid #2d3b4e14;
-      flex-direction: column;
-    }
-  }
-
-  .isMobile & {
-    flex: unset;
-  }
-
   .image {
     display: flex;
     align-items: center;
