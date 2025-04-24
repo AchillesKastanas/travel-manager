@@ -14,12 +14,20 @@
   padding: 17px;
   user-select: none;
 
+  .isMobile & {
+    display: none;
+  }
+
   // TEMP DEV
-  max-height: 942px;
+  // max-height: 942px;
 
   &.is-expanded {
     width: 260px;
     align-items: flex-start;
+
+    .isMobile & {
+      display: block;
+    }
   }
 
   .sidebar-actions-container {

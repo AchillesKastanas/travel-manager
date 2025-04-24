@@ -12,6 +12,11 @@ import SidebarButton from "@components/SidebarButton/SidebarButton";
 
 import "./Sidebar.scss";
 
+interface ISidebarProps {
+  isExpanded: boolean;
+  toggleSidebar: () => void;
+}
+
 const navItems = [
   { id: "live-view", icon: <LiveView />, label: "Live view" },
   {
@@ -29,12 +34,9 @@ const navItems = [
   { id: "settings", icon: <Settings />, label: "Settings" },
 ];
 
-const Sidebar = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
+const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
   const [activeId, setActiveId] = useState<string | null>("scheduled");
   const [openSubmenuId, setOpenSubmenuId] = useState<string | null>(null);
-
-  const toggleSidebar = () => setIsExpanded((prev) => !prev);
 
   const handleMainItemClick = (id: string, hasSubItems: boolean) => {
     setActiveId(id);
