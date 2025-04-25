@@ -9,6 +9,7 @@ import Revenue from "@assets/revenue.svg";
 import Settings from "@assets/settings.svg";
 import Collapse from "@assets/collapse.svg";
 import IconCancel from "@assets/icon-cancel.svg";
+import Support from "@assets/support.svg";
 
 import SidebarButton from "@components/SidebarButton/SidebarButton";
 
@@ -155,13 +156,22 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
           className="logout"
         />
       ) : (
-        <SidebarButton
-          icon={<Collapse />}
-          label="Collapse menu"
-          isExpanded={isExpanded}
-          className="collapse"
-          onClick={toggleSidebar}
-        />
+        <>
+          <SidebarButton
+            icon={<Support />}
+            label="Support"
+            isExpanded={isExpanded}
+            className="support"
+            onClick={toggleSidebar}
+          />
+          <SidebarButton
+            icon={<Collapse />}
+            label="Collapse menu"
+            isExpanded={isExpanded}
+            className="collapse"
+            onClick={toggleSidebar}
+          />
+        </>
       )}
     </div>
   );

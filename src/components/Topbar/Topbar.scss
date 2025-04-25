@@ -9,6 +9,8 @@
   flex-direction: row-reverse;
   align-items: center;
   padding: 0 1rem;
+  position: absolute;
+  top: 0;
   z-index: 1;
 
   .isMobile & {

@@ -43,7 +43,7 @@ const ProfileSectionMobile = ({
   opportunities,
 }: IProfileSectionMobileProps) => {
   return (
-    <div className="profile-section-container">
+    <div className="mobile-profile-section-container">
       <hr className="divider" />
       <div className="profile-guest-text">{"Your guest"}</div>
       <div className="profile-main-section-container">

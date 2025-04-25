@@ -1,5 +1,7 @@
 import React from "react";
 
+import DownIcon from "@assets/down.svg";
+
 import "./SidebarButton.scss";
 
 interface ISidebarButtonProps {
@@ -28,12 +30,16 @@ const SidebarButton = ({
       </div>
     )}
     {label && (
-      <div className={`label ${isExpanded ? "is-expanded" : ""}`}>
-        {label}
+      <>
+        <div className={`label ${isExpanded ? "is-expanded" : ""}`}>
+          {label}
+        </div>
         {showArrow && isExpanded && (
-          <span className={`arrow ${isSubmenuOpen ? "open" : ""}`}>▼</span>
+          <span className={`arrow ${isSubmenuOpen ? "open" : ""}`}>
+            <DownIcon />
+          </span>
         )}
-      </div>
+      </>
     )}
   </div>
 );

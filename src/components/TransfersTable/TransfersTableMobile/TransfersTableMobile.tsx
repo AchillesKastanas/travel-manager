@@ -42,7 +42,7 @@ const TransfersTableMobile = ({
   };
 
   return (
-    <div className="transfers-table-wrapper">
+    <div className="mobile-transfers-table-wrapper">
       {groupedUserEntries.map(([label, users], idx) => (
         <div key={`${label}-${idx}`} className="transfers-group">
           <div className="group-label">
