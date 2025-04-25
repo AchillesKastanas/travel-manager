@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { useResize } from "@/hooks/useResize";
 import Logo from "@assets/logo.svg";
 import LogoDesc from "@assets/logo-desc.svg";
 import LiveView from "@assets/live-view.svg";
@@ -7,10 +8,12 @@ import Statistics from "@assets/statistics.svg";
 import Revenue from "@assets/revenue.svg";
 import Settings from "@assets/settings.svg";
 import Collapse from "@assets/collapse.svg";
+import IconCancel from "@assets/icon-cancel.svg";
 
 import SidebarButton from "@components/SidebarButton/SidebarButton";
 
 import "./Sidebar.scss";
+import IconWrapper from "../IconWrapper/IconWrapper";
 
 interface ISidebarProps {
   isExpanded: boolean;
@@ -35,8 +38,28 @@ const navItems = [
 ];
 
 const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
+  const sidebarRef = useRef<HTMLDivElement>(null);
   const [activeId, setActiveId] = useState<string | null>("scheduled");
   const [openSubmenuId, setOpenSubmenuId] = useState<string | null>(null);
+  const { isMobile } = useResize();
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isExpanded &&
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node)
+      ) {
+        toggleSidebar();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isExpanded, toggleSidebar]);
 
   const handleMainItemClick = (id: string, hasSubItems: boolean) => {
     setActiveId(id);
@@ -55,13 +78,39 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
     activeId === itemId || subItemIds.includes(activeId || "");
 
   return (
-    <div className={`sidebar ${isExpanded ? "is-expanded" : ""}`}>
-      <SidebarButton
-        icon={<Logo />}
-        label={<LogoDesc />}
-        isExpanded={isExpanded}
-        className="logo"
-      />
+    <div
+      className={`sidebar ${isExpanded ? "is-expanded" : ""}`}
+      ref={sidebarRef}
+    >
+      {isMobile ? (
+        <div className="sidebar-header">
+          <SidebarButton
+            icon={<Logo />}
+            label={<LogoDesc />}
+            isExpanded={isExpanded}
+            className="logo"
+          />
+          <div className="modal-close" onClick={toggleSidebar}>
+            <IconWrapper
+              style={{
+                width: "2.2rem",
+                height: "2.2rem",
+                backgroundColor: "#2D3B4E1A",
+                fill: "red",
+              }}
+            >
+              <IconCancel />
+            </IconWrapper>
+          </div>
+        </div>
+      ) : (
+        <SidebarButton
+          icon={<Logo />}
+          label={<LogoDesc />}
+          isExpanded={isExpanded}
+          className="logo"
+        />
+      )}
 
       <div className="sidebar-actions-container">
         {navItems.map(({ id, icon, label, subItems }) => {
@@ -99,13 +148,21 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
         })}
       </div>
 
-      <SidebarButton
-        icon={<Collapse />}
-        label="Collapse menu"
-        isExpanded={isExpanded}
-        className="collapse"
-        onClick={toggleSidebar}
-      />
+      {isMobile ? (
+        <SidebarButton
+          label="Log out"
+          isExpanded={isExpanded}
+          className="logout"
+        />
+      ) : (
+        <SidebarButton
+          icon={<Collapse />}
+          label="Collapse menu"
+          isExpanded={isExpanded}
+          className="collapse"
+          onClick={toggleSidebar}
+        />
+      )}
     </div>
   );
 };

@@ -5,6 +5,8 @@
   height: 100%;
 
   .isMobile & {
-    height: 60rem;
+    // height: 60rem;
+    position: fixed;
+    overflow-y: auto;
   }
 }

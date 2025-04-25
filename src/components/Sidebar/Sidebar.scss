@@ -14,8 +14,20 @@
   padding: 17px;
   user-select: none;
 
+  .sidebar-header {
+    width: 100%;
+    height: 5.1rem;
+    background-color: #f4f5f6;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+  }
+
   .isMobile & {
     display: none;
+    padding: 0;
   }
 
   // TEMP DEV
@@ -24,9 +36,12 @@
   &.is-expanded {
     width: 260px;
     align-items: flex-start;
+    position: fixed;
+    left: 0;
 
     .isMobile & {
-      display: block;
+      display: flex;
+      width: 19.5rem;
     }
   }
 
@@ -36,5 +51,12 @@
     flex-direction: column;
     gap: 6px;
     width: 100%;
+
+    .isMobile & {
+      margin: 1rem auto;
+      padding-bottom: 1rem;
+      width: 90%;
+      border-bottom: 1px solid #2d3b4e14;
+    }
   }
 }
