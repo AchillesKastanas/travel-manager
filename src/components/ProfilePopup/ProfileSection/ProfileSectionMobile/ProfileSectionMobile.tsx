@@ -1,12 +1,15 @@
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
-import ProfileIcon from "@assets/icon-profile.svg";
-import ChatIcon from "@assets/chat.svg";
-import CallIcon from "@assets/call.svg";
-import TransferIcon from "@assets/icon-transfer.svg";
-import EarlyCheckinIcon from "@assets/icon-earlycheckin.svg";
-import LateCheckoutIcon from "@assets/icon-latecheckout.svg";
-import BabyIcon from "@assets/icon-baby.svg";
 import InfoItem from "../../InfoItem/InfoItem";
+
+import {
+  IconBaby,
+  IconCall,
+  IconChat,
+  IconEarlyCheckin,
+  IconLateCheckout,
+  IconProfile,
+  IconTransfer,
+} from "@/assets";
 
 import "./ProfileSectionMobile.scss";
 
@@ -22,13 +25,13 @@ interface IProfileSectionMobileProps {
 const getOpportunityIcon = (text: string): React.ReactNode => {
   switch (text) {
     case "Early check-in":
-      return <EarlyCheckinIcon />;
+      return <IconEarlyCheckin />;
     case "Late check-out":
-      return <LateCheckoutIcon />;
+      return <IconLateCheckout />;
     case "No return transfer":
-      return <TransferIcon />;
+      return <IconTransfer />;
     case "Baby":
-      return <BabyIcon />;
+      return <IconBaby />;
     default:
       return null;
   }
@@ -49,7 +52,7 @@ const ProfileSectionMobile = ({
       <div className="profile-main-section-container">
         <div className="image">
           <IconWrapper style={{ width: "100%", height: "100%" }}>
-            {travelerPhoto ? <img src={travelerPhoto} /> : <ProfileIcon />}
+            {travelerPhoto ? <img src={travelerPhoto} /> : <IconProfile />}
           </IconWrapper>
         </div>
         <div className="main-info">
@@ -77,7 +80,7 @@ const ProfileSectionMobile = ({
           <IconWrapper
             style={{ width: "1rem", height: "1rem", borderRadius: 0 }}
           >
-            <CallIcon />
+            <IconCall />
           </IconWrapper>
           Call
         </div>
@@ -85,7 +88,7 @@ const ProfileSectionMobile = ({
           <IconWrapper
             style={{ width: "1rem", height: "1rem", borderRadius: 0 }}
           >
-            <ChatIcon />
+            <IconChat />
           </IconWrapper>
           Message
         </div>

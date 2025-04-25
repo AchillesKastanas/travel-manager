@@ -1,20 +1,22 @@
 import { useEffect, useRef, useState } from "react";
 import { useResize } from "@/hooks/useResize";
-import Logo from "@assets/logo.svg";
-import LogoDesc from "@assets/logo-desc.svg";
-import LiveView from "@assets/live-view.svg";
-import Scheduled from "@assets/scheduled.svg";
-import Statistics from "@assets/statistics.svg";
-import Revenue from "@assets/revenue.svg";
-import Settings from "@assets/settings.svg";
-import Collapse from "@assets/collapse.svg";
-import IconCancel from "@assets/icon-cancel.svg";
-import Support from "@assets/support.svg";
 
 import SidebarButton from "@components/SidebarButton/SidebarButton";
+import IconWrapper from "../IconWrapper/IconWrapper";
 
 import "./Sidebar.scss";
-import IconWrapper from "../IconWrapper/IconWrapper";
+import {
+  IconCancel,
+  IconCollapse,
+  IconLiveView,
+  IconLogo,
+  IconLogoDesc,
+  IconRevenue,
+  IconScheduled,
+  IconSettings,
+  IconStatistics,
+  IconSupport,
+} from "@/assets";
 
 interface ISidebarProps {
   isExpanded: boolean;
@@ -22,10 +24,10 @@ interface ISidebarProps {
 }
 
 const navItems = [
-  { id: "live-view", icon: <LiveView />, label: "Live view" },
+  { id: "live-view", icon: <IconLiveView />, label: "Live view" },
   {
     id: "scheduled",
-    icon: <Scheduled />,
+    icon: <IconScheduled />,
     label: "Scheduled",
     subItems: [
       { id: "opportunities", label: "Opportunities" },
@@ -33,9 +35,9 @@ const navItems = [
       { id: "other-sub-item", label: "Other sub item" },
     ],
   },
-  { id: "statistics", icon: <Statistics />, label: "Statistics" },
-  { id: "revenue", icon: <Revenue />, label: "Revenue" },
-  { id: "settings", icon: <Settings />, label: "Settings" },
+  { id: "statistics", icon: <IconStatistics />, label: "Statistics" },
+  { id: "revenue", icon: <IconRevenue />, label: "Revenue" },
+  { id: "settings", icon: <IconSettings />, label: "Settings" },
 ];
 
 const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
@@ -86,8 +88,8 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
       {isMobile ? (
         <div className="sidebar-header">
           <SidebarButton
-            icon={<Logo />}
-            label={<LogoDesc />}
+            icon={<IconLogo />}
+            label={<IconLogoDesc />}
             isExpanded={isExpanded}
             className="logo"
           />
@@ -106,8 +108,8 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
         </div>
       ) : (
         <SidebarButton
-          icon={<Logo />}
-          label={<LogoDesc />}
+          icon={<IconLogo />}
+          label={<IconLogoDesc />}
           isExpanded={isExpanded}
           className="logo"
         />
@@ -158,14 +160,14 @@ const Sidebar = ({ isExpanded, toggleSidebar }: ISidebarProps) => {
       ) : (
         <>
           <SidebarButton
-            icon={<Support />}
+            icon={<IconSupport />}
             label="Support"
             isExpanded={isExpanded}
             className="support"
             onClick={toggleSidebar}
           />
           <SidebarButton
-            icon={<Collapse />}
+            icon={<IconCollapse />}
             label="Collapse menu"
             isExpanded={isExpanded}
             className="collapse"

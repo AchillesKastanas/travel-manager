@@ -1,6 +1,6 @@
 import React from "react";
 
-import DownIcon from "@assets/down.svg";
+import { IconDown } from "@/assets";
 
 import "./SidebarButton.scss";
 
@@ -36,7 +36,7 @@ const SidebarButton = ({
         </div>
         {showArrow && isExpanded && (
           <span className={`arrow ${isSubmenuOpen ? "open" : ""}`}>
-            <DownIcon />
+            <IconDown />
           </span>
         )}
       </>

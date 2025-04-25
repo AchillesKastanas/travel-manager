@@ -1,4 +1,4 @@
-import TransferGraph from "@assets/transfer-graph.svg";
+import { IconTransferGraph } from "@/assets";
 
 import "./TransferRoute.scss";
 
@@ -11,7 +11,7 @@ interface TransferRouteProps {
 const TransferRoute = ({ from, to, times }: TransferRouteProps) => {
   return (
     <div className="transfer-route-container">
-      <TransferGraph className="icon" />
+      <IconTransferGraph className="icon" />
       <div className="locations">
         <div className="location">
           <div className="name">{from.name}</div>

@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-import BackButton from "@assets/back.svg";
-import ForwardButton from "@assets/forward.svg";
+import { IconBack, IconForward } from "@/assets";
 
 import "./PageNavigation.scss";
 
@@ -15,7 +14,7 @@ const PageNavigation = () => {
   return (
     <div className="page-navigation-container">
       <div className="button-back">
-        <BackButton />
+        <IconBack />
       </div>
       <div className="number-container">
         {[1, 2, 3].map((pageIndex) => (
@@ -31,7 +30,7 @@ const PageNavigation = () => {
         ))}
       </div>
       <div className="button-forward">
-        <ForwardButton />
+        <IconForward />
       </div>
     </div>
   );

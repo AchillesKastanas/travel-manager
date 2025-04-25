@@ -1,5 +1,4 @@
-import TakeoffIcon from "@assets/icon-takeoff.svg";
-import TimeIcon from "@assets/icon-time.svg";
+import { IconTakeoff, IconTime } from "@/assets";
 
 import "./TransferSchedule.scss";
 
@@ -11,7 +10,7 @@ const TransferSchedule = ({ items }: ITransferScheduleProps) => {
   return (
     <div className="transfer-schedule-container">
       <div className="item" style={{ width: "38%" }}>
-        <TakeoffIcon />
+        <IconTakeoff />
         <span
           className="item-name"
           style={{ borderRight: "1px solid #2d3b4e14" }}
@@ -20,7 +19,7 @@ const TransferSchedule = ({ items }: ITransferScheduleProps) => {
         </span>
       </div>
       <div className="item" style={{ width: "35%" }}>
-        <TimeIcon />
+        <IconTime />
         <span
           className="item-name"
           style={{ borderRight: "1px solid #2d3b4e14" }}

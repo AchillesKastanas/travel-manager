@@ -1,9 +1,7 @@
 import { ReactNode } from "react";
 
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
-import IconCancel from "@assets/icon-cancel.svg";
-import BackButton from "@assets/back.svg";
-import ForwardButton from "@assets/forward.svg";
+import { IconCancel, IconBack, IconForward } from "@/assets";
 
 import "./DesktopModal.scss";
 
@@ -16,7 +14,7 @@ const DesktopModal = ({ onClose, children }: IDesktopModalProps) => {
   return (
     <>
       <div className="back-button">
-        <BackButton />
+        <IconBack />
       </div>
       <div
         className="desktop-modal-content"
@@ -30,7 +28,7 @@ const DesktopModal = ({ onClose, children }: IDesktopModalProps) => {
         {children}
       </div>
       <div className="next-button">
-        <ForwardButton />
+        <IconForward />
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
 
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
-import IconCancel from "@assets/icon-cancel.svg";
+import { IconCancel } from "@/assets";
 
 import "./MobileModal.scss";
 

@@ -1,17 +1,19 @@
-import { useModal } from "@/contexts/ModalContext/ModalContext";
 import { IUser } from "@/types";
+import { useModal } from "@/contexts/ModalContext/ModalContext";
 import ProfilePopup from "../ProfilePopup/ProfilePopup";
 import IconWrapper from "../IconWrapper/IconWrapper";
 
-import Arriving from "@assets/Arriving.svg";
-import Departing from "@assets/Departing.svg";
-import Transfer from "@assets/Transfer.svg";
-import IconBaby from "@assets/icon-baby.svg";
-import IconEarlyCheckIn from "@assets/icon-earlycheckin.svg";
-import IconEmpty from "@assets/icon-empty.svg";
-import IconLateCheckOut from "@assets/icon-latecheckout.svg";
-import IconProfile from "@assets/icon-profile.svg";
-import IconTransfer from "@assets/icon-transfer.svg";
+import {
+  IconArriving,
+  IconBaby,
+  IconDeparting,
+  IconEarlyCheckin,
+  IconEmpty,
+  IconInCity,
+  IconLateCheckout,
+  IconProfile,
+  IconTransfer,
+} from "@/assets";
 
 import "./TransferRow.scss";
 
@@ -30,11 +32,11 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
   const loadStatusIcon = (category: string) => {
     switch (category) {
       case "Arrival":
-        return <Arriving />;
+        return <IconArriving />;
       case "Departure":
-        return <Departing />;
+        return <IconDeparting />;
       case "In City":
-        return <Transfer />;
+        return <IconInCity />;
     }
   };
 
@@ -73,12 +75,12 @@ const TransferRow = ({ user, formattedUserDate }: ITransferRowProps) => {
           )}
           {user.early_checkin && (
             <IconWrapper>
-              <IconEarlyCheckIn />
+              <IconEarlyCheckin />
             </IconWrapper>
           )}
           {user.late_checkout && (
             <IconWrapper>
-              <IconLateCheckOut />
+              <IconLateCheckout />
             </IconWrapper>
           )}
           {!user.babies &&

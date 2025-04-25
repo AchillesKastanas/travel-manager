@@ -1,21 +1,23 @@
 import { IUser } from "@/types";
-import CalendarIcon from "@assets/calendar.svg";
-import Arriving from "@assets/arriving.svg";
-import Departing from "@assets/departing.svg";
-import Transfer from "@assets/transfer.svg";
-import ProfileIcon from "@assets/profile.svg";
-import IconBaby from "@assets/icon-baby.svg";
-import IconEarlyCheckIn from "@assets/icon-earlycheckin.svg";
-import IconEmpty from "@assets/icon-empty.svg";
-import IconLateCheckOut from "@assets/icon-latecheckout.svg";
-import IconTransfer from "@assets/icon-transfer.svg";
-
 import { formatUserDate } from "@/components/TransfersGroup/utils/formatUserDate";
-
-import "./TransfersTableMobile.scss";
 import IconWrapper from "@/components/IconWrapper/IconWrapper";
 import ProfilePopup from "@/components/ProfilePopup/ProfilePopup";
 import { useModal } from "@/contexts/ModalContext/ModalContext";
+
+import {
+  IconArriving,
+  IconBaby,
+  IconCalendar,
+  IconDeparting,
+  IconEarlyCheckin,
+  IconEmpty,
+  IconInCity,
+  IconLateCheckout,
+  IconProfile,
+  IconTransfer,
+} from "@/assets";
+
+import "./TransfersTableMobile.scss";
 
 interface ITransferTableMobileProps {
   groupedUserEntries: [string, IUser[]][];
@@ -24,11 +26,11 @@ interface ITransferTableMobileProps {
 const loadStatusIcon = (category: string) => {
   switch (category) {
     case "Arrival":
-      return <Arriving />;
+      return <IconArriving />;
     case "Departure":
-      return <Departing />;
+      return <IconDeparting />;
     case "In City":
-      return <Transfer />;
+      return <IconInCity />;
   }
 };
 
@@ -46,7 +48,7 @@ const TransfersTableMobile = ({
       {groupedUserEntries.map(([label, users], idx) => (
         <div key={`${label}-${idx}`} className="transfers-group">
           <div className="group-label">
-            <CalendarIcon />
+            <IconCalendar />
             <span>{label}</span>
           </div>
           {users.map((user, userIdx) => (
@@ -102,12 +104,12 @@ const TransfersTableMobile = ({
                       )}
                       {user.early_checkin && (
                         <IconWrapper>
-                          <IconEarlyCheckIn />
+                          <IconEarlyCheckin />
                         </IconWrapper>
                       )}
                       {user.late_checkout && (
                         <IconWrapper>
-                          <IconLateCheckOut />
+                          <IconLateCheckout />
                         </IconWrapper>
                       )}
                       {!user.babies &&
@@ -127,7 +129,7 @@ const TransfersTableMobile = ({
                     {user.traveler_photo ? (
                       <img src={user.traveler_photo} />
                     ) : (
-                      <ProfileIcon />
+                      <IconProfile />
                     )}
                   </IconWrapper>
                 </div>
