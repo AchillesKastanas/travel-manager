@@ -10,8 +10,9 @@ import "./TransfersTable.scss";
 const TransfersTable = () => {
   const {
     data: users,
-    loading: usersLoading,
-    error: usersError,
+    // Future usage
+    // loading: usersLoading,
+    // error: usersError,
   } = useFetchData<IUser[]>("/data/transfers_list.json");
 
   const { isMobile } = useResize();

@@ -41,7 +41,6 @@ const ProfileSectionMobile = ({
   name,
   travelerPhoto,
   phone,
-  email,
   origin,
   opportunities,
 }: IProfileSectionMobileProps) => {

@@ -16,8 +16,9 @@ const ProfilePopup = ({ user }: IProfilePopupProps) => {
   const { isMobile } = useResize();
   const {
     data: travels,
-    loading: travelsLoading,
-    error: travelsError,
+    // Future usage
+    // loading: travelsLoading,
+    // error: travelsError,
   } = useFetchData<ITravel[]>("/data/transfers_details.json");
 
   const travel: ITravel | null = travels
