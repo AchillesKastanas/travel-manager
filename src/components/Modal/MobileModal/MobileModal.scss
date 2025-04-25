@@ -1,5 +1,5 @@
 .mobile-modal-content {
-  background: #ffffff;
+  background: var(--white);
   overflow: hidden;
   border-radius: 12px 12px 0 0;
   width: 100%;
@@ -15,7 +15,7 @@
     z-index: 11;
 
     .row-icon-wrapper {
-      background-color: #2d3b4e0d;
+      background-color: var(--dark-navy-blue-2);
     }
   }
 }

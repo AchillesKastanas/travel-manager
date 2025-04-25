@@ -12,16 +12,16 @@
     padding-left: 1rem;
     font-weight: 600;
     font-size: 0.7rem;
-    color: #2d3b4e80;
+    color: var(--dark-navy-blue-6);
     text-align: left;
     height: 2.1rem;
-    background-color: #2d3b4e0a;
+    background-color: var(--dark-navy-blue-9);
 
     .new-label {
-      background-color: #ffc149;
+      background-color: var(--notification-yellow);
       border-radius: 2px;
-      box-shadow: 0px 1px 3px 0px #ffc149;
-      color: white;
+      box-shadow: 0px 1px 3px 0px var(--notification-yellow);
+      color: var(--white);
       font-weight: 700;
       font-size: 0.6rem;
       display: flex;

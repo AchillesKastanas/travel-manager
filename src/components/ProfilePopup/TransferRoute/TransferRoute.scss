@@ -29,13 +29,13 @@
       .name {
         font-size: 0.96rem;
         font-weight: 600;
-        color: #2d3b4e;
+        color: var(--dark-navy-blue-4);
       }
 
       .address {
         font-size: 0.78rem;
         font-weight: 400;
-        color: #2d3b4e80;
+        color: var(--dark-navy-blue-6);
         margin-top: 0.1rem;
       }
     }
@@ -54,7 +54,7 @@
     .hour {
       font-size: 0.9rem;
       font-weight: 600;
-      color: #2d3b4e80;
+      color: var(--dark-navy-blue-6);
     }
   }
 }

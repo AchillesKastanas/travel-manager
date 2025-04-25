@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  border-right: 1px solid #2d3b4e14;
+  border-right: 1px solid var(--dark-navy-blue-5);
 
   .image {
     display: flex;
@@ -19,7 +19,7 @@
     font-weight: 800;
     width: 50%;
     text-align: center;
-    color: #2d3b4e;
+    color: var(--dark-navy-blue-4);
     margin: 1rem auto 0 auto;
   }
 
@@ -27,7 +27,7 @@
     border: 0;
     margin: 1.8rem auto 0 auto;
     width: 72%;
-    border-top: 1px solid #2d3b4e14;
+    border-top: 1px solid var(--dark-navy-blue-5);
   }
 
   .opportunities {
@@ -40,7 +40,7 @@
     .opportunities-title {
       font-size: 0.75rem;
       font-weight: 600;
-      color: #2d3b4e80;
+      color: var(--dark-navy-blue-3);
     }
 
     .opportunities-list {
@@ -56,7 +56,7 @@
         .opportunity-text {
           font-size: 0.9rem;
           font-weight: 400;
-          color: #2d3b4e;
+          color: var(--dark-navy-blue-4);
         }
       }
     }

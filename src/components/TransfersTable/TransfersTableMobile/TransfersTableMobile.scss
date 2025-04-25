@@ -1,7 +1,7 @@
 .mobile-transfers-table-wrapper {
   padding: 1.2rem;
   margin-top: 4rem;
-  background-color: #f5f7fa;
+  background-color: var(--cold-white-3);
   min-height: 100%;
 
   .transfers-group {
@@ -11,19 +11,19 @@
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      background-color: #2d3b4e0a;
+      background-color: var(--dark-navy-blue-9);
       padding: 0.5rem 1rem;
       border-radius: 16px;
       font-size: 0.9rem;
       font-weight: 600;
-      color: #2d3b4e66;
+      color: var(--dark-navy-blue-8);
     }
   }
 
   .transfer-card {
-    background-color: #ffffff;
+    background-color: var(--white);
     border-radius: 8px;
-    box-shadow: 0px 1px 1px 0px #2d3b4e0f;
+    box-shadow: var(--dark-navy-blue-shadow-2);
     margin-top: 0.8rem;
     overflow: hidden;
 
@@ -41,23 +41,23 @@
           .status-label {
             font-size: 0.6rem;
             font-weight: 600;
-            color: white;
+            color: var(--white);
             border-radius: 16px;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
             padding-left: 0.3rem;
-            background-color: #736bff;
+            background-color: var(--status-incity-purple);
             height: 1rem;
             width: 4.5rem;
 
             &.arrival {
-              background-color: #56a7fa;
+              background-color: var(--status-arrival-blue);
             }
 
             &.departure {
-              background-color: #f96381;
+              background-color: var(--status-departure-red);
             }
 
             svg {
@@ -69,12 +69,12 @@
         .traveller-name {
           font-size: 1.2rem;
           font-weight: 600;
-          color: #2d3b4e;
+          color: var(--dark-navy-blue-4);
         }
 
         .property-label {
           font-size: 0.65rem;
-          color: #999;
+          color: var(--gray);
           font-weight: 600;
           text-transform: uppercase;
         }
@@ -82,7 +82,7 @@
         .property-name {
           font-size: 0.85rem;
           font-weight: 500;
-          color: #2d3b4e;
+          color: var(--dark-navy-blue-4);
         }
 
         .info-block {
@@ -92,13 +92,13 @@
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
-            color: #2d3b4e80;
+            color: var(--dark-navy-blue-6);
           }
 
           .info-value {
             font-size: 0.9rem;
             font-weight: 600;
-            color: #2d3b4e;
+            color: var(--dark-navy-blue-4);
           }
 
           .opportunities-data-wrapper {
@@ -116,7 +116,7 @@
 
           .icon {
             font-size: 1.2rem;
-            color: #2d3b4e80;
+            color: var(--dark-navy-blue-6);
           }
         }
       }

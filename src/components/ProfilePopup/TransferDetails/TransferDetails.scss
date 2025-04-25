@@ -1,6 +1,6 @@
 .transfer-details-container {
   display: flex;
-  background-color: #f3f4f6;
+  background-color: var(--cold-white-2);
   height: 2.3rem;
   width: 18rem;
   border-radius: 18px;
@@ -10,7 +10,7 @@
   .isMobile & {
     margin-top: 2rem;
     width: 100%;
-    border: 1px solid #2d3b4e14;
+    border: 1px solid var(--dark-navy-blue-5);
     border-radius: 50px;
     background-color: unset;
     height: 3rem;
@@ -39,7 +39,7 @@
     .item-name {
       font-size: 0.7rem;
       font-weight: 600;
-      color: #2d3b4e80;
+      color: var(--dark-navy-blue-6);
       margin-left: 0.6rem;
     }
   }

@@ -1,6 +1,6 @@
 .back-button {
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: var(--white);
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
@@ -13,7 +13,7 @@
 
 .next-button {
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: var(--white);
   width: 2.5rem;
   height: 2.5rem;
   position: absolute;
@@ -25,7 +25,7 @@
 }
 
 .desktop-modal-content {
-  background: #ffffff;
+  background: var(--white);
   overflow: hidden;
   border-radius: 8px;
   width: 100%;
@@ -34,7 +34,7 @@
   max-height: 41.5rem;
   position: relative;
   z-index: 10;
-  box-shadow: 0px 2px 10px 0px #19283e80;
+  box-shadow: 0px 2px 10px 0px var(--dark-navy-blue-3);
 
   .modal-close {
     position: absolute;
