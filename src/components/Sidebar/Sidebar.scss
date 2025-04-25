@@ -2,7 +2,7 @@
 
 .sidebar {
   position: absolute;
-  width: 82px;
+  width: 5.1rem;
   height: 100%;
   background-color: var(--sidebar-bg);
   box-shadow: var(--box-shadow);
@@ -11,7 +11,7 @@
   transition: width 0.3s ease;
   display: flex;
   flex-direction: column;
-  padding: 17px;
+  padding: 1rem;
   user-select: none;
 
   .sidebar-header {
@@ -30,11 +30,8 @@
     padding: 0;
   }
 
-  // TEMP DEV
-  // max-height: 942px;
-
   &.is-expanded {
-    width: 260px;
+    width: 16.3rem;
     align-items: flex-start;
     position: fixed;
     left: 0;
@@ -46,10 +43,10 @@
   }
 
   .sidebar-actions-container {
-    margin-top: 32px;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 0.4rem;
     width: 100%;
 
     .isMobile & {

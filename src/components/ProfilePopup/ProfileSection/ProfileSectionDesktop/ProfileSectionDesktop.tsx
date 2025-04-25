@@ -57,7 +57,7 @@ const ProfileSectionDesktop = ({
         <div className="opportunities-list">
           {opportunities.map((opportunity, index) => (
             <div key={index} className="opportunity-row">
-              <IconWrapper style={{ width: "34px", height: "34px" }}>
+              <IconWrapper style={{ width: "2.1rem", height: "2.1rem" }}>
                 {getOpportunityIcon(opportunity)}
               </IconWrapper>
               <div className="opportunity-text">{opportunity}</div>

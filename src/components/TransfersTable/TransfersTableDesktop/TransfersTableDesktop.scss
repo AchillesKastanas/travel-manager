@@ -14,7 +14,7 @@
     font-size: 0.7rem;
     color: #2d3b4e80;
     text-align: left;
-    height: 34px;
+    height: 2.1rem;
     background-color: #2d3b4e0a;
 
     .new-label {
@@ -27,8 +27,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 20px;
+      width: 2.2rem;
+      height: 1.3rem;
       margin-left: 1rem;
     }
 
@@ -41,9 +41,5 @@
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
     }
-  }
-
-  tfoot tr td {
-    height: 40px;
   }
 }
